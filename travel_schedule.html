@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東京遠征 旅程マニュアル</title>
+<style>
+  /* A4 1枚印刷用設定 */
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display: none; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", Meiryo, sans-serif;
+    color: #1e293b;
+    background-color: #fff;
+    font-size: 9.2pt;
+    line-height: 1.45;
+  }
+
+  /* ヘッダー */
+  .header {
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .header h1 { font-size: 13.5pt; color: #0f172a; font-weight: bold; }
+  .route-summary {
+    margin-top: 3px;
+    font-size: 8.5pt;
+    color: #334155;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .route-summary strong { color: #0284c7; }
+
+  /* 見出しバー */
+  .day-title {
+    font-size: 9.5pt;
+    font-weight: bold;
+    color: #fff;
+    background-color: #334155;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* テーブル */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 6px 8px;
+    vertical-align: middle;
+  }
+  th {
+    background-color: #f1f5f9;
+    font-weight: bold;
+    text-align: center;
+    color: #334155;
+    font-size: 8.8pt;
+    padding: 5px 8px;
+  }
+  .col-time { width: 14%; text-align: center; font-weight: bold; white-space: nowrap; font-size: 8.5pt; }
+  .col-step { width: 18%; font-weight: bold; font-size: 8.8pt; line-height: 1.35; }
+  .col-detail { width: 44%; font-size: 8.8pt; }
+  .col-duration { width: 10%; text-align: center; font-size: 8.5pt; font-weight: bold; color: #475569; white-space: nowrap; }
+  .col-fare { width: 14%; text-align: center; background-color: #fafafa; }
+  .fare-main { font-weight: bold; color: #0284c7; font-size: 9pt; }
+  .fare-sub { font-size: 7.8pt; color: #64748b; margin-top: 1px; }
+
+  /* 帰路比較テーブル */
+  .rt-table th { font-size: 8.8pt; padding: 6px 8px; }
+  .rt-table td { font-size: 8.5pt; padding: 8px 10px; vertical-align: top; }
+
+  /* バッジ・強調 */
+  .badge {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 7.2pt;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 3px;
+  }
+  .bg-keikyu { background-color: #dc2626; }
+  .bg-yuri { background-color: #0284c7; }
+  .bg-taxi { background-color: #16a34a; }
+  .bg-bus { background-color: #ea580c; }
+  .bg-walk { background-color: #64748b; }
+  
+  .alert-text { color: #dc2626; font-weight: bold; }
+  .check-point { font-weight: bold; color: #0369a1; }
+  ul { padding-left: 14px; margin: 0; }
+  li { margin-bottom: 3px; }
+
+  /* フッター */
+  .footer-notes {
+    border-top: 2px solid #0f172a;
+    padding: 5px 10px;
+    font-size: 8.2pt;
+    color: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f5f9;
+    border-radius: 3px;
+    margin-top: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <h1>東京遠征 旅程マニュアル（3名）</h1>
+  </div>
+  <div class="route-summary">
+    <strong>9月10日</strong> 15:55羽田空港着 ➔ ヒルトン東京お台場 ➔ 19:00西麻布カサハラ（新橋経由） ➔ ヒルトン東京お台場（宿泊） ➔ <strong>11日</strong> 有明GYM-EX ➔ 19:40羽田発
+  </div>
+</div>
+
+<!-- 1日目 -->
+<div class="day-title">
+  <span>【1日目：9月10日】羽田空港 ➔ ホテル ➔ 新橋経由で西麻布「カサハラ」（夕食19:00）</span>
+  <span style="font-weight: normal; font-size: 8pt;">夕食移動：電車＋新橋からタクシー</span>
+</div>
+<table>
+  <tr>
+    <th class="col-time">時間目安</th>
+    <th class="col-step">区間・手段</th>
+    <th class="col-detail">移動手順・チェックポイント</th>
+    <th class="col-duration">所要時間</th>
+    <th class="col-fare">料金</th>
+  </tr>
+  <tr>
+    <td class="col-time">15:55〜16:35</td>
+    <td><span class="badge bg-walk">徒歩</span><br>降機・荷物受取</td>
+    <td>荷物受取後、地下の京急線改札へ移動（<strong>徒歩約4分</strong>・モノレール不可）。</td>
+    <td class="col-duration">約40分</td>
+    <td class="col-fare">-</td>
+  </tr>
+  <tr>
+    <td class="col-time">16:35〜17:00</td>
+    <td><span class="badge bg-keikyu">京急線</span><br>羽田空港 ➔ 新橋</td>
+    <td>
+      <span class="check-point">「品川・浅草方面」「押上」「青砥」</span>行に乗車（浅草線直通・新橋まで乗換無）。<br>
+      <span class="alert-text">※「横浜・三崎口方面」は逆方向のため乗車厳禁。</span>
+    </td>
+    <td class="col-duration">約25分</td>
+    <td class="col-fare">
+      <div class="fare-main">1,575円</div>
+      <div class="fare-sub">525円/人</div>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-time">17:00〜17:08</td>
+    <td><span class="badge bg-walk">徒歩</span><br>新橋駅 乗換</td>
+    <td>新橋駅の地下改札を出て、高架の「ゆりかもめ」乗り場へ移動。始発のため全列車OK。</td>
+    <td class="col-duration">約8分</td>
+    <td class="col-fare">-</td>
+  </tr>
+  <tr>
+    <td class="col-time">17:08〜17:25</td>
+    <td><span class="badge bg-yuri">ゆりかもめ</span><br>新橋 ➔ ホテル（台場）</td>
+    <td>
+      <span class="check-point">「台場駅」</span>下車。改札を出て<span class="check-point">右折</span>でヒルトン直結（<strong>徒歩約2分</strong>）。チェックイン。
+    </td>
+    <td class="col-duration">約17分<br><span style="font-size:7.2pt; color:#64748b;">(乗車15分+歩2分)</span></td>
+    <td class="col-fare">
+      <div class="fare-main">783円</div>
+      <div class="fare-sub">261円/人</div>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-time">18:10〜18:30</td>
+    <td><span class="badge bg-yuri">ゆりかもめ</span><br>ホテル（台場） ➔ 新橋</td>
+    <td>
+      ホテルから台場駅へ（<strong>徒歩約2分</strong>）。ゆりかもめ<span class="check-point">「新橋行き」</span>に乗車。<br>
+      終点・新橋駅で下車し、烏森口または日比谷口のタクシー乗り場へ（<strong>徒歩約2分</strong>）。
+    </td>
+    <td class="col-duration">約20分<br><span style="font-size:7.2pt; color:#64748b;">(歩4分+乗車15分)</span></td>
+    <td class="col-fare">
+      <div class="fare-main">783円</div>
+      <div class="fare-sub">261円/人</div>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-time">18:35〜18:55</td>
+    <td><span class="badge bg-taxi">タクシー</span><br>新橋駅 ➔ 西麻布</td>
+    <td>
+      新橋駅からタクシー乗車。<br>
+      運転手へ行先指定：<span class="check-point">「西麻布2-2-2のＮＫ青山ホームズ」</span>（西麻布交差点・外苑西通り方面）。
+    </td>
+    <td class="col-duration">約15〜20分</td>
+    <td class="col-fare">
+      <div class="fare-main">約2,250円</div>
+      <div class="fare-sub">約750円/人</div>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-time">19:00〜</td>
+    <td>カサハラ</td>
+    <td>東京都港区西麻布2-2-2 ＮＫ青山ホームズＡ３</td>
+    <td class="col-duration"></td>
+    <td class="col-fare"></td>
+  </tr>
+  <tr>
+    <td class="col-time"></td>
+    <td><span class="badge bg-taxi">タクシー</span><br>西麻布 ➔ ホテル（台場）</td>
+    <td>
+      西麻布交差点付近からタクシー乗車。<br>
+      お台場のヒルトン東京お台場正面玄関まで直通で帰館。
+    </td>
+    <td class="col-duration">約20〜25分</td>
+    <td class="col-fare">
+      <div class="fare-main">約3,500円</div>
+      <div class="fare-sub">約1,167円/人</div>
+    </td>
+  </tr>
+</table>
+
+<!-- 2日目 午前 -->
+<div class="day-title">
+  <span>【2日目：9月11日 午前】ホテル（台場） ➔ 有明GYM-EX</span>
+  <span style="font-weight: normal; font-size: 8pt;">会場直着</span>
+</div>
+<table>
+  <tr>
+    <th class="col-time">時間目安</th>
+    <th class="col-step">区間・手段</th>
+    <th class="col-detail">移動手順・チェックポイント</th>
+    <th class="col-duration">所要時間</th>
+    <th class="col-fare">料金</th>
+  </tr>
+  <tr>
+    <td class="col-time">09:30〜09:40</td>
+    <td><span class="badge bg-taxi">タクシー</span><br>ホテル ➔ 会場</td>
+    <td>
+      チェックアウト後、車寄せから乗車。<br>
+      運転手へ<span class="check-point">「有明GYM-EX（ジムエックス）正面エントランスまで」</span>と伝える。
+    </td>
+    <td class="col-duration">約8〜10分</td>
+    <td class="col-fare">
+      <div class="fare-main">約1,100円</div>
+      <div class="fare-sub">約367円/人</div>
+    </td>
+  </tr>
+</table>
+
+<!-- 2日目 午後帰路 -->
+<div class="day-title">
+  <span>【2日目：9月11日 午後】有明GYM-EX ➔ 羽田空港（午後いつでも対応）</span>
+  <span style="font-weight: normal; font-size: 8pt;">※19:40発便対応</span>
+</div>
+
+<table class="rt-table">
+  <tr>
+    <th style="width: 50%; background-color: #e0f2fe; color: #0369a1;">
+      【案A：電車】何時でも出発可能・定時性抜群（乗換1回）<br>
+      <span style="font-weight: bold; color: #0284c7;">2,739円（913円/人） / 所要：約50〜55分</span>
+    </th>
+    <th style="width: 50%; background-color: #ffedd5; color: #c2410c;">
+      【案B：直行バス】座席直行・乗換0回（午後便全網羅）<br>
+      <span style="font-weight: bold; color: #ea580c;">3,000円（1,000円/人） / 所要：約45分（歩8分含）</span>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>会場から<strong>徒歩約5分</strong>（400m）で「有明テニスの森駅」へ。</li>
+        <li>ゆりかもめ<span class="check-point">「新橋行き」</span>乗車（約25分・4〜5分毎運行）。</li>
+        <li>新橋駅で地下の都営浅草線1番線ホームへ乗換（<strong>徒歩約3分</strong>）。</li>
+        <li><span class="check-point">「羽田空港行き」</span>直通に乗車（約20分・約10分毎運行）。</li>
+      </ul>
+      <div style="margin-top: 6px; padding: 5px 8px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 3px; font-size: 8pt;">
+        <strong>【運行の目安】</strong><br>
+        会場を出発してから<span class="check-point">約50〜55分後</span>に羽田空港駅ホームへ到着。
+      </div>
+    </td>
+    <td>
+      <ul>
+        <li>会場から東へ<strong>徒歩約8分</strong>（600m）、「有明ガーデン」1階バスターミナルへ。</li>
+        <li>羽田空港行きリムジンバスに乗車（荷物はトランク預け）。</li>
+        <li><span class="alert-text">※便数が限られるため発車時刻に注意。</span></li>
+      </ul>
+      <div style="margin-top: 6px; padding: 5px 8px; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; font-size: 8pt;">
+        <strong>【有明ガーデン発 午後全便】</strong>（バス乗車 約35分）<br>
+        ・12:30発&emsp;・14:00発&emsp;・15:30発<br>
+        ・<span style="color:#64748b;">16時台なし（電車を利用）</span><br>
+        ・17:00発&emsp;・17:30発
+      </div>
+    </td>
+  </tr>
+</table>
+
+<!-- 羽田空港スケジュール -->
+<div class="footer-notes">
+  <div><strong>空港到着後：</strong> 荷物預入 ➔ 自由時間 ➔ <span class="alert-text">19:20 保安検査場締切（出発20分前厳守）</span> ➔ 19:30 搭乗口 ➔ <strong>19:40 離陸</strong></div>
+</div>
+
+</body>
+</html>
